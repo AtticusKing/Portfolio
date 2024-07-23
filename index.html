@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon2.png" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!--=============== ADATUBE JS ===============-->
+    <script src="assets/js/adatube.js" defer></script>
+    <link rel="stylesheet" href="assets/css/adatube.css">
+
+    <!--=============== LOCOMOTIVE JS ===============-->
+    <link rel='stylesheet' href='assets/css/locomotive-scroll.min.css' />
+    <script src='assets/js/locomotive-scroll.min.js'></script>
+
+    <title>Atticus King's Portfolio</title>
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                Atticus
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class="ri-home-5-line"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#qualification" class="nav__link">
+                            <i class="ri-book-open-line"></i> Qualification
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#projects" class="nav__link">
+                            <i class="ri-image-line"></i> Projects
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#services" class="nav__link">
+                            <i class="ri-briefcase-line"></i> Specialties
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class="ri-trophy-line"></i> Skills
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="ri-chat-3-line"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Close button -->
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <div class="nav__buttons">
+                <!-- Theme change button -->
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-4-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home section" id="home">
+            <div class="home__container container grid section__border">
+                <div class="home__data grid">
+                    <h1 class="home__title">
+                        Hi, I’m Atticus
+                    </h1>
+                    <h2 class="home__subtitle">Creative Strategist
+
+                    </h2>
+
+                    <div class="home__blob grid">
+                        <div class="home__perfil">
+                            <img src="assets/img/main-photo.png" alt="">
+                        </div>
+
+                        <img src="assets/img/shape-wawes.svg" alt="" class="home__shape-wawes">
+                        <img src="assets/img/shape-circle.svg" alt="" class="home__shape-circle">
+                    </div>
+
+                    <ul class="home__social">
+                        <a href="https://www.linkedin.com/in/atticusking/" target="_blank" class="home__social-link">
+                            <i class="ri-linkedin-box-line"></i>
+                        </a>
+
+                        <a href="https://www.youtube.com/channel/UCCe2cUDdIRr9psdxEmwenSw" target="_blank"
+                            class="home__social-link">
+                            <i class="ri-youtube-line"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/imatticusking/" target="_blank"
+                            class="home__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                    </ul>
+                </div>
+
+                <!--==================== HOME INFO 1 ====================-->
+                <div class="home__info">
+                    <div>
+                        <h3 class="home__info-title">
+                            BIOGRAPHY
+                        </h3>
+
+                        <p class="home__info-description" id="home__info-description-bio">
+                            I am a California-based designer with expertise in branding and audience engagement,
+                            captivated by the strategies behind quality design.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="home__info-title">
+                            CAPABILITIES
+                        </h3>
+
+                        <div class="home__info-description">
+                            <div class="home__info-description-sub">
+                                <ul class="capabilities-list"></ul>
+                                <li>Graphic Design</li>
+                                <li>Web Development</li>
+                                <li>UI/UX Design</li>
+                                <li>Video Editing</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--==================== HOME INFO 2 ====================-->
+                <div class="home__info">
+                    <div>
+                        <h3 class="home__info-title">
+                            EDUCATION
+                        </h3>
+
+                        <p class="home__info-description">
+                            B.A. of Design <br>
+                            University of California, Davis <br>
+                            June 2024
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="home__info-title">
+                            CONTACT
+                        </h3>
+
+                        <p class="home__info-description">
+                            Atticus A. King <br>
+                            Davis, CA <br>
+                            &#109;&#105;&#120;&#105;&#099;&#117;&#115;&#107;&#105;&#110;&#103;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;
+                            <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== QUALIFICATION ====================-->
+        <section class="qualification section" id="qualification">
+            <h2 class="section__title">Qualification</h2>
+            <span class="section__subtitle2">Experience & Education</span>
+
+            <!-- download button -->
+            <div class="qualification__resume">
+                <a href="assets/pdf/Atticus_King_Resume_2024.pdf" download="Atticus_King_Resume_2024.pdf"
+                    class="resume-download-button">Download Resume</a>
+            </div>
+
+
+            <div class="qualification__container container grid section__border">
+                <!--==================== QUALIFICATION 1 ====================-->
+                <div class="qualification__content">
+                    <h3 class="qualification__title">
+                        <i class="ri-pencil-ruler-2-line"></i> Education
+                    </h3>
+
+                    <div class="qualification__info">
+                        <div>
+                            <h3 class="qualification__name">
+                                B.A. in Design
+                            </h3>
+                            <span class="qualification__country">University of California, Davis</span>
+                            <span class="qualification__year">2020 - 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--==================== QUALIFICATION 2 ====================-->
+                <div class="qualification__content">
+                    <h3 class="qualification__title">
+                        <i class="ri-building-line"></i> Work
+                    </h3>
+
+                    <div class="qualification__info">
+                        <div>
+                            <h3 class="qualification__name">
+                                Software Quality Control Intern
+                            </h3>
+                            <span class="qualification__country">Live CGI Inc. - Westport, CT</span>
+                            <span class="qualification__year">June - August 2022</span>
+                        </div>
+
+                        <div>
+                            <h3 class="qualification__name">
+                                Graphic Design Assistant
+                            </h3>
+                            <span class="qualification__country">Trailer Park Group - Hollywood, CA</span>
+                            <span class="qualification__year">June - August 2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <img src="assets/img/shape-circle.svg" alt="qualification image" class="qualification__img">
+        </section>
+
+        <!--==================== PROJECTS ====================-->
+        <section class="projects section" id="projects">
+            <h2 class="section__title">Projects</h2>
+            <span class="section__subtitle">Case Studies</span>
+            <div class="container section__border">
+                
+        
+    <!--==================== GALLERY ====================-->
+            <div class="eric-gallery-section">
+                <div class="eric-gallery-container">
+                    <div class="eric-gallery-grid">
+                        <div class="eric-gallery-item">
+                            <div class="eric-gallery-image-wrapper">
+                                <a href="/case-study3.html" class="eric-gallery-link">
+                                    <img src="assets/img/bee-01.png" loading="lazy" alt="Fernet Web Design and Art Direction Project" class="eric-gallery-image"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="eric-gallery-item">
+                            <div class="eric-gallery-text-wrapper">
+                                <div class="eric-gallery-heading-4">Logo Design, Packaging Strategy</div>
+                                <p class="eric-gallery-heading-2">
+                                    BeeBar Energy<br/>
+                                </p>
+                                <a href="/case-study3.html" class="eric-gallery-button">
+                                    <div class="eric-gallery-circle-button">
+                                        <div class="eric-gallery-circle-button-wrap">
+                                            <img width="Auto" alt="" src="assets/svg/arrow-gallery.svg" loading="lazy" class="eric-gallery-image-arrow"/>
+                                            <div class="eric-gallery-arrow"></div>
+                                        </div>
+                                        <div>View Project</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eric-gallery-section2">
+                <div class="eric-gallery-container">
+                    <div class="eric-gallery-grid">
+                        <div class="eric-gallery-item">
+                            <div class="eric-gallery-text-wrapper2">
+                                <div class="eric-gallery-heading-4">UX/UI, App Design</div>
+                                <p class="eric-gallery-heading-2">
+                                    SimpleFinance<br/>
+                                </p>
+                                <a href="/case-study1.html" class="eric-gallery-button">
+                                    <div class="eric-gallery-circle-button">
+                                        <div class="eric-gallery-circle-button-wrap">
+                                            <img src="assets/svg/arrow-gallery.svg" loading="lazy" width="Auto" alt="" class="eric-gallery-image-arrow"/>
+                                            <div class="eric-gallery-arrow"></div>
+                                        </div>
+                                        <div>View Project</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="eric-gallery-item">
+                            <div class="eric-gallery-image-wrapper">
+                                <a href="/case-study1.html" class="eric-gallery-link">
+                                    <img src="assets/img/thumbnails/achieve/Sleep.webp" loading="lazy" alt="Plum Organics web design and art direction project" class="eric-gallery-image"/>
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="eric-gallery-section">
+                <div class="eric-gallery-container">
+                    <div class="eric-gallery-grid">
+                        <div class="eric-gallery-item">
+                            <div class="eric-gallery-image-wrapper">
+                                <a href="/case-study2.html" class="eric-gallery-link">
+                                    <img src="assets/img/pixendar.png" loading="lazy" alt="Art Direction for Visible Mobile" class="eric-gallery-image"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="eric-gallery-item">
+                            <div class="eric-gallery-text-wrapper">
+                                <div class="eric-gallery-heading-4">Product Design, Art Direction</div>
+                                <p class="eric-gallery-heading-2">
+                                    Pixendar Calendar<br/>
+                                </p>
+                                <a href="/case-study2.html" class="eric-gallery-button">
+                                    <div class="eric-gallery-circle-button">
+                                        <div class="eric-gallery-circle-button-wrap">
+                                            <img src="assets/svg/arrow-gallery.svg" loading="lazy" width="Auto" alt="" class="eric-gallery-image-arrow"/>
+                                            <div class="eric-gallery-arrow"></div>
+                                        </div>
+                                        <div>View Project</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!--==================== GALLERY 2 ====================-->
+    <!-- <div class="gallery-container">
+                <h1  class="gallery-h1">Gallery</h1>
+              
+                <div class="gallery-wrap">
+                  <div class="item item-1"></div>
+                  <div class="item item-2"></div>
+                  <div class="item item-3"></div>
+                  <div class="item item-4"></div>
+                  <div class="item item-5"></div>
+                </div>
+            </div> -->
+
+    <!--==================== SERVICES ====================-->
+    <section class="services section" id="services">
+        <h2 class="section__title">Specialties</h2>
+        <span class="section__subtitle">What I Deliver</span>
+
+        <div class="services__container container grid section__border">
+            <div class="services__card">
+                <i class="ri-layout-4-line"></i>
+
+                <h2 class="services__title">
+                    UI/UX <br>
+                    Designer
+                </h2>
+
+                <p class="services__description">
+                    Intuitive and appealing interfaces to enhance engagement.
+                </p>
+                <div class="services__border"></div>
+            </div>
+
+            <div class="services__card">
+                <i class="ri-code-line"></i>
+
+                <h2 class="services__title">
+                    Website <br>
+                    Developer
+                </h2>
+
+                <p class="services__description">
+                    Responsive websites tailored to meet specific requirements.
+                </p>
+                <div class="services__border"></div>
+            </div>
+
+            <div class="services__card">
+                <i class="ri-clapperboard-line"></i>
+
+                <h2 class="services__title">
+                    Video <br>
+                    Editor
+                </h2>
+
+                <p class="services__description">
+                    Captivating and polished content that tells your story the way you want.
+                </p>
+                <div class="services__border"></div>
+            </div>
+        </div>
+    </section>
+
+    <!--==================== SKILLS ====================-->
+    <section class="skills section" id="skills">
+        <h2 class="section__title">Skills</h2>
+        <span class="section__subtitle">Professional Skills</span>
+
+        <div class="skills__container container grid section__border">
+            <!--==================== SKILLS 1 ====================-->
+            <div class="skills__content">
+                <h3 class="skills__title">
+                    <i class="ri-braces-line"></i> Frontend Developer
+                </h3>
+
+                <div class="skills__info">
+                    <div class="skills__data">
+                        <div class="skills__blob">
+                            <img src="assets/img/html-1.svg" alt="skills image">
+                        </div>
+
+                        <h3 class="skills__name">HTML</h3>
+                        <span class="skills__subtitle">Advanced</span>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__blob">
+                            <img src="assets/img/css-3.svg" alt="skills image">
+                        </div>
+
+                        <h3 class="skills__name">CSS</h3>
+                        <span class="skills__subtitle">Advanced</span>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__blob">
+                            <img src="assets/img/logo-javascript.svg" alt="skills image">
+                        </div>
+
+                        <h3 class="skills__name">JavaScript</h3>
+                        <span class="skills__subtitle">Intermediate</span>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__blob">
+                            <img src="assets/img/figma-1.svg" alt="skills image">
+                        </div>
+
+                        <h3 class="skills__name">Figma</h3>
+                        <span class="skills__subtitle">Basic</span>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__blob">
+                            <img src="assets/img/github.svg" alt="skills image">
+                        </div>
+
+                        <h3 class="skills__name">Github</h3>
+                        <span class="skills__subtitle">Intermediate</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--==================== SKILLS 2 ====================-->
+            <div class="skills__content">
+                <h3 class="skills__title">
+                    <i class="ri-quill-pen-line"></i> Graphic Designer
+                </h3>
+
+                <div class="skills__info">
+                    <div class="skills__data">
+                        <div class="skills__blob">
+                            <img src="assets/img/adobe-illustrator-1.svg" alt="skills image">
+                        </div>
+
+                        <h3 class="skills__name">Illustrator</h3>
+                        <span class="skills__subtitle">Highly Advanced</span>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__blob">
+                            <img src="assets/img/adobe-photoshop-2.svg" alt="skills image">
+                        </div>
+
+                        <h3 class="skills__name">Photoshop</h3>
+                        <span class="skills__subtitle">Advanced</span>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__blob">
+                            <img src="assets/img/adobe-aftereffects-1.svg" alt="skills image">
+                        </div>
+
+                        <h3 class="skills__name">After Effects</h3>
+                        <span class="skills__subtitle">Intermediate</span>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__blob">
+                            <img src="assets/img/adobe-premierepro-1.svg" alt="skills image">
+                        </div>
+
+                        <h3 class="skills__name">Premiere Pro</h3>
+                        <span class="skills__subtitle">Advanced</span>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__blob">
+                            <img src="assets/img/blender.svg" alt="skills image">
+                        </div>
+
+                        <h3 class="skills__name">Blender</h3>
+                        <span class="skills__subtitle">Basic</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==================== CONTACT ====================-->
+    <section class="contact section" id="contact">
+        <h2 class="section__title">Contact Me</h2>
+        <span class="section__subtitle">Let's talk!</span>
+
+        <div class="contact__container container grid section__border">
+            <div class="contact__content">
+                <h3 class="contact__title">
+                    <i class="ri-chat-3-line"></i> Talk to me
+                </h3>
+
+                <div class="contact__info">
+                    <div class="contact__data">
+                        <span class="contact__data-title">Email</span>
+                        <span
+                            class="contact__data-info">&#109;&#105;&#120;&#105;&#099;&#117;&#115;&#107;&#105;&#110;&#103;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</span>
+                    </div>
+
+                    <div class="contact__data">
+                        <span class="contact__data-title">LinkedIn</span>
+                        <span class="contact__data-info">Atticus King</span>
+                        <!-- Insert a real number plus country code -->
+                        <a href="https://www.linkedin.com/in/atticusking/"
+                            target="_blank" class="contact__button">
+                            Write me <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="contact__content">
+                <h3 class="contact__title">
+                    <i class="ri-send-plane-line"></i> Send me an email
+                </h3>
+
+                <form action="" class="contact__form" id="contact-form">
+                    <div class="contact__form-div">
+                        <label class="contact__form-tag">Name</label>
+                        <input type="text" name="user_name" required placeholder="Write your name"
+                            class="contact__form-input" id="contact-name">
+                    </div>
+
+                    <div class="contact__form-div">
+                        <label class="contact__form-tag">Email</label>
+                        <input type="email" name="user_email" required placeholder="Write your email"
+                            class="contact__form-input" id="contact-email">
+                    </div>
+
+                    <div class="contact__form-div contact__form-area">
+                        <label class="contact__form-tag">Message</label>
+                        <textarea name="user_project" placeholder="Write your message" class="contact__form-input"
+                            id="contact-project"></textarea>
+                    </div>
+
+                    <p class="contact__message" id="contact-message"></p>
+
+                    <button type="submit" class="contact__button">
+                        Submit <i class="ri-arrow-right-up-line"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__container container">
+            <h1 class="footer__title">Atticus</h1>
+            <p>Creative Strategist</p>
+
+            <ul class="footer__list">
+                <li>
+                    <a href="#home" class="footer__link">Home</a>
+                </li>
+
+                <li>
+                    <a href="#projects" class="footer__link">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#skills" class="footer__link">Skills</a>
+                </li>
+            </ul>
+
+            <ul class="footer__social">
+                <a href="https://www.linkedin.com/in/atticusking/" target="_blank" class="footer__social-link">
+                    <i class="ri-linkedin-box-line"></i>
+                </a>
+
+                <a href="https://www.youtube.com/channel/UCCe2cUDdIRr9psdxEmwenSw" target="_blank"
+                    class="footer__social-link">
+                    <i class="ri-youtube-line"></i>
+                </a>
+
+                <a href="https://www.instagram.com/imatticusking/" target="_blank"
+                    class="footer__social-link">
+                    <i class="ri-instagram-line"></i>
+                </a>
+            </ul>
+
+            <span class="footer__copy">
+                &#169; 2024 Copyright Atticus King. All rights reserved.
+            </span>
+        </div>
+    </footer>
+
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="assets/js/scrollreveal.min.js"></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--=============== EMAIL JS ===============-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+
+    <!--=============== OVERLAY JS ===============-->
+    <script src="assets/js/overlay.js"></script>
+</body>
+
+</html>

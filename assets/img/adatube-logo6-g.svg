@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 238.4 76.69">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #000;
+        font-family: Arial-BoldMT, Arial;
+        font-size: 62.13px;
+        font-weight: 700;
+      }
+
+      .cls-1, .cls-2 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        fill: red;
+      }
+
+      .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        letter-spacing: -.07em;
+      }
+    </style>
+  </defs>
+  <g id="es5FiRODjAz1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <path class="cls-3" d="M57.15,9.23H9.75C4.36,9.23,0,14.4,0,20.78v23.23c0,6.38,4.36,11.55,9.75,11.55h47.4c5.38,0,9.75-5.17,9.75-11.55v-23.23c0-6.38-4.36-11.55-9.75-11.55Z"/>
+    <g class="cls-2">
+      <text class="cls-1" transform="translate(77.94 53.3) scale(.63 1)"><tspan class="cls-5" x="0" y="0">Y</tspan><tspan x="36.83" y="0">ou</tspan><tspan class="cls-5" x="112.73" y="0">T</tspan><tspan x="146.06" y="0">ube</tspan></text>
+    </g>
+    <polygon class="cls-4" points="44.43 32.43 28.47 23.22 28.47 41.64 44.43 32.43"/>
+  </g>
+</svg>

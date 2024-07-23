@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study 2</title>
+</head>
+
+<style>
+
+    .frame {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+
+    .case-image {
+    width: 100%;
+    display: block;
+    max-width: 1024px;
+    margin: 0 auto;
+    }
+
+
+    :root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(207, 65%, 65%);
+  --title-color: hsl(207, 4%, 16%);
+  --text-color: hsl(207, 4%, 28%);
+  --text-color-light: hsl(207, 4%, 56%);
+  --body-color: hsl(207, 4%, 99%);
+  --container-color: hsl(207, 4%, 95%);
+
+  /* Change the first number */
+  /* Blue: 207 - Purple: 250 - Pink: 356 - Teal: 174 */
+  --gradient-color: linear-gradient(180deg,
+                      hsla(207, 48%, 72%, 0),
+                      hsla(207, 65%, 65%, 1));
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Roboto', sans-serif;
+  --title-font: 'Lora', serif;
+  --biggest-font-size: 1.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  --tiny-font-size: .625rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+    --tiny-font-size: .688rem;
+  }
+}
+
+
+    /*=============== HEADER & NAV ===============*/
+.header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  z-index: var(--z-fixed);
+  top: 0;
+}
+
+.nav {
+  height: calc(var(--header-height) + .5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--body-color);
+  box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
+  padding-inline: 1.5rem;
+  transition: .4s; /* for dark mode animation */
+}
+
+.nav__logo, 
+.nav__toggle, 
+.nav__close {
+  color: var(--title-color);
+}
+
+.nav__logo {
+  font-family: var(--title-font);
+  font-weight: var(--font-medium);
+}
+
+.nav__toggle {
+  display: flex;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+
+.nav__list {
+  grid-template-columns: repeat(3, max-content);
+  justify-content: center;
+  gap: 2rem 3rem;
+}
+
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: .25rem;
+  
+  color: var(--title-color);
+  transition: color .3s;
+}
+
+.nav__link:hover {
+  color: var(--title-color);
+}
+
+.nav__link i {
+  font-size: 1.25rem;
+}
+
+.nav__close {
+  position: absolute;
+  right: 1.5rem;
+  bottom: .7rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Show menu */
+.show-menu {
+  bottom: 2rem;
+}
+
+/* Active link */
+.active-link {
+  color: var(--title-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav-width {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+}
+
+.flex-one-width {
+    flex: 1;
+    align-items: flex-start;
+    padding-left: 25px;
+}
+
+.flex-two-width {
+    padding-right: 25px;
+}
+
+@media screen and (min-width: 1023px) {
+.flex-two-width {
+    width: initial;
+    margin-left: auto;
+    background-color: var(--body-color);
+    transition: background .4s;
+    text-align: right;
+  }
+
+  .nav__list {
+    display: flex;
+    column-gap: 3rem;
+  }
+  .nav__link {
+    font-size: var(--normal-font-size);
+  }
+}
+
+</style>
+
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            
+            <div class="nav-width">
+                
+                <div class="flex-one-width">
+                    <a href="#" class="nav__logo">
+                        Atticus
+                    </a>
+                </div>
+
+                <div class="flex-two-width">
+                    <a href="/index.html" class="nav__link">
+                        <i class="ri-chat-3-line"></i> Back
+                    </a>
+                </div>
+            </div>
+
+            <div class="nav__buttons">
+                <!-- Theme change button -->
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-4-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="center-study">
+    <img src="/assets/img/Case Studies/Website DES001 Project 5.png" alt="DES001" class="case-image">
+    </section>
+    
+</body>
+</html>
