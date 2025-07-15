@@ -90,6 +90,11 @@ a {
   text-decoration: none;
 }
 
+#main-photo {
+  width: 2000px;
+  transform: translateX(-10px);
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -1648,7 +1653,14 @@ body.dark-theme .overlay-content {
   }
   .home__perfil img {
     width: 350px;
+    
   }
+
+  #main-photo {
+    transform: translateX(-20px);
+  }
+
+
   .home__shape-wawes {
     width: 100px;
     left: -4rem;
