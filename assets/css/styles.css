@@ -659,9 +659,10 @@ body.dark-theme {
 
 
 .qualification__name {
-  font-size: var(--normal-font-size);
+  /* font-size: var(--normal-font-size); */
   margin-bottom: .5rem;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--normal-font-size);
   font-weight: bold;
 }
 
@@ -1784,7 +1785,8 @@ body.dark-theme .overlay-content {
     font-size: 1.25rem;
   }
   .qualification__name {
-    font-size: var(--h3-font-size);
+    /* font-size: var(--h3-font-size); */
+    font-size: var(--normal-font-size);
   }
   .qualification__img {
     width: 300px;
