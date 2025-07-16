@@ -23,11 +23,31 @@ if (!overlay) {
   `;
 
   overlay.innerHTML = `
-    <div id="overlay-content" style="position: relative; width: 90%; height: 90%; background: white; border-radius: 10px; overflow: hidden;">
-      <button id="overlay-close" style="position: absolute; top: 10px; right: 10px; font-size: 2rem; background: none; border: none; cursor: pointer;">&times;</button>
-      <iframe id="overlay-iframe" src="" frameborder="0" style="width: 100%; height: 100%;"></iframe>
-    </div>
-  `;
+  <div id="overlay-content" style="
+    position: relative;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+    animation: fadeIn 0.3s ease;
+  ">
+    <button id="overlay-close" class="overlay-close-button">&times;</button>
+    <iframe id="overlay-iframe" src="" frameborder="0" style="
+      width: 100%;
+      max-width: 1024px;
+      height: 90vh;
+      display: block;
+      margin: 0 auto;
+      border: none;
+    "></iframe>
+  </div>
+`;
+
 
   document.body.appendChild(overlay);
 }
@@ -41,12 +61,34 @@ projectLinks.forEach(link => {
     const url = link.getAttribute('href');
     iframe.src = url;
     overlay.style.display = 'flex';
+requestAnimationFrame(() => overlay.classList.add('show'));
+
     document.body.style.overflow = 'hidden'; // prevent scrolling behind the overlay
   });
 });
 
 closeButton.addEventListener('click', () => {
-  overlay.style.display = 'none';
+    overlay.classList.remove('show');
+    setTimeout(() => {
+      overlay.style.display = 'none';
+      iframe.src = '';
+      document.body.style.overflow = '';
+    }, 400);
+    
   iframe.src = '';
   document.body.style.overflow = ''; // re-enable scrolling
 });
+
+
+// Close overlay on Escape key (with fade-out)
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && overlay.style.display === 'flex') {
+      overlay.classList.remove('show');
+      setTimeout(() => {
+        overlay.style.display = 'none';
+        iframe.src = '';
+        document.body.style.overflow = '';
+      }, 400); // Match your fade-out duration
+    }
+  });
+  
