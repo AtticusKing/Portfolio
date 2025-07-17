@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Design Iteration Comparison</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <style>
+    html, body {
+    overflow-x: hidden;
+    }
+
+
+    body {
+    max-width: 900px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    color: #222;
+    margin: 0 auto;     
+    padding: 0;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+.comparison-columns {
+  display: flex;
+  justify-content: space-between;
+    gap: 1.9rem;
+  max-width: 800px;
+  margin: 0;
+  /* margin: 0 auto 2rem auto; */
+}
+
+.column {
+  flex: 1;
+  max-width: 280px;
+  text-align: center;
+}
+
+.swiper {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.comparison-controls {
+  text-align: center;
+  margin-top: 1rem;
+  
+}
+
+.comparison-controls button {
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  /* padding: 0.8rem 1.4rem; */
+  background-color: #4a86e8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-bottom: 60px;
+}
+
+.comparison-controls button:hover {
+  transform: scale(1.05);
+}
+
+* {
+  outline: 1px solid red;
+}
+
+
+/* ✅ Responsive behavior below 800px */
+@media screen and (max-width: 800px) {
+  .comparison-columns {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+
+  .column {
+    min-width: 260px;
+    flex-shrink: 0;
+  }
+
+  .swiper {
+    width: 100%;
+  }
+}
+
+.comparison-columns {
+  position: relative;
+}
+
+.comparison-controls {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Optional spacing between images */
+/* .column:not(:last-child) {
+  margin-right: 1rem;
+} */
+
+/* Make sure buttons stay right beneath content */
+.comparison-controls button {
+  position: relative;
+  bottom: 0;
+}
+
+section {
+  margin-bottom: 3rem; /* Or increase to 4rem, etc. */
+}
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Design Iteration Comparison</h1>
+    <p>Swipe through or click to compare each version side by side</p>
+  </header>
+
+  <section>
+    <div class="comparison-columns row-1">
+      <div class="column">
+        <h3>First Draft</h3>
+        <div class="swiper draft-swiper-1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-1.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-2.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/media-kit-cover.png" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <h3>After Critique</h3>
+        <div class="swiper critique-swiper-1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-1.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-2.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-3.jpg" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <h3>Final Edit</h3>
+        <div class="swiper final-swiper-1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-1.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-2.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-3.jpg" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="comparison-controls">
+      <button id="prev-page-1">← Last</button>
+      <button id="next-page-1">Next →</button>
+    </div>
+  
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus architecto sequi id dolore sed, sit aperiam, optio vero harum veniam omnis asperiores. Sed eius eum amet alias velit atque aliquam facilis suscipit sint ducimus, dolorem aliquid dolore consequatur earum accusamus quas? Distinctio explicabo excepturi ad asperiores minima, quae aliquid atque.</p>
+</section>
+  
+
+  <section>
+    <div class="comparison-columns row-2">
+      <div class="column">
+        <h3>First Draft</h3>
+        <div class="swiper draft-swiper-2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-1.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-2.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-3.jpg" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <h3>After Critique</h3>
+        <div class="swiper critique-swiper-2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-1.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-2.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-3.jpg" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <h3>Final Edit</h3>
+        <div class="swiper final-swiper-2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-1.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-2.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-3.jpg" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="comparison-controls">
+      <button id="prev-page-2">← Last</button>
+      <button id="next-page-2">Next →</button>
+    </div>
+  </section>
+  
+  <section>
+    <div class="comparison-columns row-3">
+      <div class="column">
+        <h3>First Draft</h3>
+        <div class="swiper draft-swiper-3">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-1.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-2.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-3.jpg" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <h3>After Critique</h3>
+        <div class="swiper critique-swiper-3">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-1.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-2.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-3.jpg" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <h3>Final Edit</h3>
+        <div class="swiper final-swiper-3">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-1.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-2.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-3.jpg" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="comparison-controls">
+      <button id="prev-page-3">← Last</button>
+      <button id="next-page-3">Next →</button>
+    </div>
+  </section>
+  
+  <section>
+    <div class="comparison-columns row-4">
+      <div class="column">
+        <h3>First Draft</h3>
+        <div class="swiper draft-swiper-4">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-1.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-2.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-3.jpg" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <h3>After Critique</h3>
+        <div class="swiper critique-swiper-4">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-1.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-2.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-3.jpg" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <h3>Final Edit</h3>
+        <div class="swiper final-swiper-4">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-1.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-2.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/Tech and Comedy/Tech-Final-3.jpg" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="comparison-controls">
+      <button id="prev-page-4">← Last</button>
+      <button id="next-page-4">Next →</button>
+    </div>
+  </section>
+  
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiperSettings = {
+      slidesPerView: 1,
+      loop: false,
+      allowTouchMove: false,
+      watchOverflow: true
+    };
+  
+    const swiperGroups = [];
+  
+    for (let i = 1; i <= 4; i++) {
+      const draft = new Swiper(`.draft-swiper-${i}`, swiperSettings);
+      const critique = new Swiper(`.critique-swiper-${i}`, swiperSettings);
+      const final = new Swiper(`.final-swiper-${i}`, swiperSettings);
+  
+      swiperGroups.push([draft, critique, final]);
+  
+      // Sync buttons
+      document.getElementById(`next-page-${i}`).addEventListener('click', () => {
+        draft.slideNext();
+        critique.slideNext();
+        final.slideNext();
+      });
+  
+      document.getElementById(`prev-page-${i}`).addEventListener('click', () => {
+        draft.slidePrev();
+        critique.slidePrev();
+        final.slidePrev();
+      });
+  
+     // Fixed: sync swipers without skipping slides
+const sync = (swiper, others) => {
+  swiper.on('slideChangeTransitionEnd', () => {
+    const index = swiper.activeIndex;
+    others.forEach(s => {
+      if (s.activeIndex !== index) {
+        s.slideTo(index, 0, false);
+      }
+    });
+  });
+};
+
+  
+      sync(draft, [critique, final]);
+      sync(critique, [draft, final]);
+      sync(final, [draft, critique]);
+    }
+  
+    // Ensure all Swipers are updated on load
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        swiperGroups.forEach(([draft, critique, final]) => {
+          draft.update();
+          critique.update();
+          final.update();
+          draft.slideTo(0);
+          critique.slideTo(0);
+          final.slideTo(0);
+        });
+      }, 50);
+    });
+  </script>
+  
+</body>
+</html>
