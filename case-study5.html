@@ -38,17 +38,52 @@
 .comparison-columns {
   display: flex;
   justify-content: space-between;
-    gap: 1.9rem;
+    /* gap: 1.9rem; */
   max-width: 800px;
   margin: 0;
   /* margin: 0 auto 2rem auto; */
 }
 
+.comparison-columns > .column:nth-child(1) {
+  margin-right: 0rem; /* Reduce spacing after the first column */
+}
+
+.comparison-columns > .column:nth-child(2) {
+  margin-right: 1rem; /* Restore spacing before the third column */
+}
+
+
 .column {
   flex: 1;
-  max-width: 280px;
+  max-width: 277px;
   text-align: center;
+  position: relative;
+  /* padding: 0.5rem; */
+  padding-bottom: 0.5em;
 }
+
+.column:last-child {
+  border: 2px solid #4a86e8;
+  background-color: #e8f0ff;
+  border-radius: 6px;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.comparison-columns > .column:nth-child(1) {
+  background-color: lightgrey;
+  border-radius: 6px 0 0 6px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.comparison-columns > .column:nth-child(2) {
+  background-color: lightgrey;
+  border-radius: 0 6px 6px 0;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
 
 .swiper {
   width: 100%;
@@ -70,6 +105,13 @@
   
 }
 
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+
 .comparison-controls button {
   font-size: 1rem;
   padding: 0.6rem 1.2rem;
@@ -81,15 +123,16 @@
   cursor: pointer;
   transition: transform 0.2s ease;
   margin-bottom: 60px;
+  transition: opacity 0.3s ease, cursor 0.3s ease;
 }
 
 .comparison-controls button:hover {
   transform: scale(1.05);
 }
 
-* {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 
 /* ✅ Responsive behavior below 800px */
@@ -172,7 +215,7 @@ section {
         <h3>Final Edit</h3>
         <div class="swiper final-swiper-1">
           <div class="swiper-wrapper">
-<div class="swiper-slide"><img src="assets/img/PDF-Sequences/3-Finished/Tech and Comedy/Tech-Final-1.jpg" /></div>
+            <div class="swiper-slide"><img src="assets/img/PDF-Sequences/3-Finished/Tech and Comedy/Tech-Final-1.jpg" /></div>
             <div class="swiper-slide"><img src="assets/img/PDF-Sequences/3-Finished/Tech and Comedy/Tech-Final-2.jpg" /></div>
             <div class="swiper-slide"><img src="assets/img/PDF-Sequences/3-Finished/Tech and Comedy/Tech-Final-3.jpg" /></div>
           </div>
@@ -324,26 +367,49 @@ section {
     };
   
     const swiperGroups = [];
+
+    function updateButtonState(swiper, prevBtn, nextBtn) {
+  if (swiper.isBeginning) {
+    prevBtn.disabled = true;
+    prevBtn.style.opacity = 0.4;
+  } else {
+    prevBtn.disabled = false;
+    prevBtn.style.opacity = 1;
+  }
+
+  if (swiper.isEnd) {
+    nextBtn.disabled = true;
+    nextBtn.style.opacity = 0.4;
+  } else {
+    nextBtn.disabled = false;
+    nextBtn.style.opacity = 1;
+  }
+}
+
   
     for (let i = 1; i <= 4; i++) {
       const draft = new Swiper(`.draft-swiper-${i}`, swiperSettings);
       const critique = new Swiper(`.critique-swiper-${i}`, swiperSettings);
       const final = new Swiper(`.final-swiper-${i}`, swiperSettings);
   
+      const prevBtn = document.getElementById(`prev-page-${i}`);
+      const nextBtn = document.getElementById(`next-page-${i}`);
+
       swiperGroups.push([draft, critique, final]);
   
       // Sync buttons
-      document.getElementById(`next-page-${i}`).addEventListener('click', () => {
+     nextBtn.addEventListener('click', () => {
         draft.slideNext();
         critique.slideNext();
         final.slideNext();
       });
-  
-      document.getElementById(`prev-page-${i}`).addEventListener('click', () => {
+
+      prevBtn.addEventListener('click', () => {
         draft.slidePrev();
         critique.slidePrev();
         final.slidePrev();
       });
+
   
      // Fixed: sync swipers without skipping slides
 const sync = (swiper, others) => {
@@ -361,6 +427,13 @@ const sync = (swiper, others) => {
       sync(draft, [critique, final]);
       sync(critique, [draft, final]);
       sync(final, [draft, critique]);
+
+      [draft, critique, final].forEach(swiper => {
+        swiper.on('slideChange', () => {
+          updateButtonState(swiper, prevBtn, nextBtn);
+        });
+      });
+
     }
   
     // Ensure all Swipers are updated on load
@@ -373,6 +446,8 @@ const sync = (swiper, others) => {
           draft.slideTo(0);
           critique.slideTo(0);
           final.slideTo(0);
+          updateButtonState(draft, prevBtn, nextBtn);
+
         });
       }, 50);
     });
