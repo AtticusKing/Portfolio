@@ -70,15 +70,24 @@
   padding-left: 0.5em;
 }
 
+#moved-final-column {
+  border: 2px solid #4a86e8;
+  background-color: #e8f0ff;
+  border-radius: 6px;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  margin-left: 1em;
+}
+
 .comparison-columns > .column:nth-child(1) {
-  background-color: lightgrey;
+  background-color: rgb(234, 234, 234);
   border-radius: 6px 0 0 6px;
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
 
 .comparison-columns > .column:nth-child(2) {
-  background-color: lightgrey;
+  background-color: rgb(234, 234, 234);
   border-radius: 0 6px 6px 0;
   padding-right: 0.5em;
   padding-left: 0.5em;
@@ -179,6 +188,18 @@ section {
   margin-bottom: 3rem; /* Or increase to 4rem, etc. */
 }
 
+.column-subheader {
+  font-size: .85em;
+  margin: 0;
+  padding: 0;
+  margin-top: -1em;
+  margin-bottom: 1em;
+}
+
+#hidden-column{
+  visibility: hidden;
+}
+
 
   </style>
 </head>
@@ -186,13 +207,15 @@ section {
 
   <header>
     <h1>Design Iteration Comparison</h1>
-    <p>Swipe through or click to compare each version side by side</p>
+    <p>Swipe through or click to compare each page side by side</p>
   </header>
 
   <section>
     <div class="comparison-columns row-1">
       <div class="column">
-        <h3>First Draft</h3>
+        <h3>Nae's Draft</h3>
+        <p class="column-subheader">Assigned Project</p>
+
         <div class="swiper draft-swiper-1">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="assets/img/PDF-Sequences/1-Original/Tech and Comedy/Tech-Original-1.jpg" /></div>
@@ -202,7 +225,9 @@ section {
         </div>
       </div>
       <div class="column">
-        <h3>After Critique</h3>
+        <h3>Nae's Revision</h3>
+        <p class="column-subheader">After My Feedback</p>
+
         <div class="swiper critique-swiper-1">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="assets/img/PDF-Sequences/2-Critique/Tech and Comedy/Tech-Critique-1.jpg" /></div>
@@ -212,7 +237,9 @@ section {
         </div>
       </div>
       <div class="column">
-        <h3>Final Edit</h3>
+        <h3>My Final Polish</h3>
+        <p class="column-subheader">Magazine-Ready Article</p>
+
         <div class="swiper final-swiper-1">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="assets/img/PDF-Sequences/3-Finished/Tech and Comedy/Tech-Final-1.jpg" /></div>
@@ -234,7 +261,8 @@ section {
   <section>
     <div class="comparison-columns row-2">
       <div class="column">
-        <h3>First Draft</h3>
+        <h3>Chase's Draft</h3>
+        <p class="column-subheader">Assigned Project</p>
         <div class="swiper draft-swiper-2">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="assets/img/PDF-Sequences/1-Original/Power of a Laugh/Power-Original-1.jpg" /></div>
@@ -244,7 +272,8 @@ section {
         </div>
       </div>
       <div class="column">
-        <h3>After Critique</h3>
+        <h3>Chase's Revision</h3>
+        <p class="column-subheader">After My Feedback</p>
         <div class="swiper critique-swiper-2">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="assets/img/PDF-Sequences/2-Critique/Power of a Laugh/Power-Critique-1.jpg" /></div>
@@ -254,7 +283,8 @@ section {
         </div>
       </div>
       <div class="column">
-        <h3>Final Edit</h3>
+        <h3>My Final Polish</h3>
+        <p class="column-subheader">Magazine-Ready Article</p>
         <div class="swiper final-swiper-2">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="assets/img/PDF-Sequences/3-Finished/Power of a Laugh/Power-Finished-1.jpg" /></div>
@@ -273,7 +303,8 @@ section {
   <section>
     <div class="comparison-columns row-3">
       <div class="column">
-        <h3>First Draft</h3>
+        <h3>Avery's Draft</h3>
+        <p class="column-subheader">Assigned Project</p>
         <div class="swiper draft-swiper-3">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="assets/img/PDF-Sequences/1-Original/Key and Peele/Key-Original-1.jpg" /></div>
@@ -284,7 +315,8 @@ section {
         </div>
       </div>
       <div class="column">
-        <h3>After Critique</h3>
+        <h3>Avery's Revision</h3>
+        <p class="column-subheader">After My Feedback</p>
         <div class="swiper critique-swiper-3">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="assets/img/PDF-Sequences/2-Critique/Key and Peele/Key-Critique-1.jpg" /></div>
@@ -295,7 +327,8 @@ section {
         </div>
       </div>
       <div class="column">
-        <h3>Final Edit</h3>
+        <h3>My Final Polish</h3>
+        <p class="column-subheader">Magazine-Ready Article</p>
         <div class="swiper final-swiper-3">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="assets/img/PDF-Sequences/3-Finished/Key and Peele/Key-Finished-1.jpg" /></div>
@@ -315,7 +348,8 @@ section {
   <section>
     <div class="comparison-columns row-4">
       <div class="column">
-        <h3>First Draft</h3>
+        <h3>Sophia's Draft</h3>
+        <p class="column-subheader">Assigned Project</p>
         <div class="swiper draft-swiper-4">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="assets/img/PDF-Sequences/1-Original/Veterans Social Media/Veterans-Original-1.jpg" /></div>
@@ -325,8 +359,9 @@ section {
           </div>
         </div>
       </div>
-      <div class="column">
-        <h3>Final Edit</h3>
+      <div class="column" id="moved-final-column">
+        <h3>My Final Polish</h3>
+        <p class="column-subheader">Magazine-Ready Article</p>
         <div class="swiper critique-swiper-4">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="assets/img/PDF-Sequences/3-Finished/Veterans Social Media/Veterans-Finished-1.jpg" /></div>
@@ -336,7 +371,7 @@ section {
           </div>
         </div>
       </div>
-      <div class="column">
+      <div class="column" id="hidden-column">
         <!-- <h3>Final Edit</h3>
         <div class="swiper final-swiper-4">
           <div class="swiper-wrapper">
