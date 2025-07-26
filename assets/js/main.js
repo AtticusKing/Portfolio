@@ -1,3 +1,6 @@
+emailjs.init('V2TcYvhljjOV_0ig9');
+
+
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
@@ -81,7 +84,7 @@ const sendEmail = (e) =>{
     contactMessage.textContent = 'Write all the input fields 📩' 
   }else{
     // serviceID - templateID - #form - publicKey
-    emailjs.sendForm('service_nkkouxd','template_hqz8wku','#contact-form','V2TcYvhljjOV_0ig9')
+    emailjs.sendForm('service_pc1p3pm','template_hqz8wku','#contact-form','V2TcYvhljjOV_0ig9')
       .then(() =>{
         // Show message and add color
         contactMessage.classList.add('color-blue')
