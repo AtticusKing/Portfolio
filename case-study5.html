@@ -200,17 +200,127 @@ section {
   visibility: hidden;
 }
 
+/* .paragraph-thin {
+  max-width: 500px;
+  margin: auto;
+   /* background-color: red;
+   padding: 1rem;
+   margin-bottom: -20px;
+}*/
+
+/* .final-thin {
+  max-width: 550px;
+  margin: auto;
+  margin-bottom: 40px;
+ background-color: red;
+  padding: 1rem; 
+}  */
+
+
+/* centers whatever is inside */
+.callout-wrap {
+  text-align: center;
+}
+
+/* shrink-wraps to content, but keeps left text alignment */
+.paragraph-thin {
+  display: inline-block;      /* key: shrink to content width */
+  text-align: left;           /* keep left-justified text */
+  max-width: 550px;            /* readable line length (or 500px) */
+  padding: 12px 16px;         /* breathing room */
+  background: #ececec;        /* your red (optional) */
+  border-radius: 6px;         /* optional polish */
+}
+
+.paragraph-thin ol li {
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+/* .final-thin {
+  display: inline-block;     
+  text-align: left;          
+  max-width: 60ch;           
+  padding: 12px 16px;      
+  background: #fbe4e2;       
+  border-radius: 6px; 
+} */
+
+.final-thin {
+  text-align: center;
+}
+
+
+.margin-to-bottom {
+  margin-bottom: 40px;
+}
+
+.article-section h3 {
+  margin-bottom: 0.25rem; /* tighter gap under the title */
+}
+
+/* Specifically target the author line under each h3 */
+.article-section h3 + p {
+  margin-top: 0;  
+  margin-bottom: 0.75rem; /* space before the bullets */
+  font-style: italic; /* optional: keeps author name distinct */
+}
+
+/* Style the bullet points for readability */
+.article-section ul li {
+  line-height: 1.3;   /* more line spacing */
+  margin-bottom: 0.5rem; /* extra gap between bullets */
+  margin: auto;
+  align-items: center;
+}
+
+.article-section {
+  margin-bottom: 20px;
+}
+
+
+.divider {
+  border: none;             /* remove default style */
+  height: 2px;              /* thin line */
+  background-color: #ccc;   /* subtle grey */
+  margin-top: -30px;
+  margin-bottom: 70px;
+  max-width: 700px;         /* shorter than full width */
+}
+
 
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Design Iteration Comparison</h1>
-    <p>Swipe through or click to compare each page side by side</p>
+    <h1>Magazine Iteration Comparison</h1>
+    <p>Click through to compare each article side by side.</p>
   </header>
+  
+  <section class="callout-wrap">
+    <div class="paragraph-thin">
+      <p class="final-thin">Below are four examples of articles I oversaw. The first two columns show designer drafts and revisions; the third shows my magazine-ready polish.</p>
+    </div>
+
+  </section>
+
+    
+
+  
 
   <section>
+      
+      <section class="article-section">
+      <h3>Technology and Comedy</h3>
+      <p><strong>By Carsan Okamoto</strong></p>
+      <ul>
+        <li>Brightened images and introduced a holographic effect for more visual impact.</li>
+        <li>Added a yellow highlight color to improve contrast between elements.</li>
+        <li>Simplified and clarified the circuit-board design while improving spacing for readability.</li>
+      </ul>
+      </section>
+
     <div class="comparison-columns row-1">
       <div class="column">
         <h3>Nae's Draft</h3>
@@ -253,12 +363,22 @@ section {
       <button id="prev-page-1">← Last</button>
       <button id="next-page-1">Next →</button>
     </div>
+  </section>
   
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus architecto sequi id dolore sed, sit aperiam, optio vero harum veniam omnis asperiores. Sed eius eum amet alias velit atque aliquam facilis suscipit sint ducimus, dolorem aliquid dolore consequatur earum accusamus quas? Distinctio explicabo excepturi ad asperiores minima, quae aliquid atque.</p>
-</section>
-  
+  <hr class="divider">
 
   <section>
+
+    <section class="article-section">
+    <h3>The Power of a Laugh</h3>
+    <p><strong>By Yasmin Macara</strong></p>
+    <ul>
+      <li>Removed distracting text boxes by fading background colors where they conflicted with type.</li>
+      <li>Refined the banner behind the title to match the cartoon style.</li>
+      <li>Preserved Chase’s strong original image choices, focusing polish on layout and cohesion.</li>
+    </ul>
+    </section>
+
     <div class="comparison-columns row-2">
       <div class="column">
         <h3>Chase's Draft</h3>
@@ -300,7 +420,20 @@ section {
     </div>
   </section>
   
+  <hr class="divider">
+
   <section>
+
+    <section class="article-section">
+     <h3>The Success of Key and Peele</h3>
+      <p><strong>By Maya Campbell</strong></p>
+      <ul>
+        <li>Increased contrast across the spread by redesigning Avery’s heavy first-page title layout.</li>
+        <li>Introduced a bold, stylized photo to lead the article.</li>
+        <li>Added alternating background shades behind columns to create separation and flow.</li>
+      </ul>
+      </section>
+
     <div class="comparison-columns row-3">
       <div class="column">
         <h3>Avery's Draft</h3>
@@ -345,7 +478,20 @@ section {
     </div>
   </section>
   
+  <hr class="divider">
+
   <section>
+
+    <section class="article-section">
+    <h3>Veterans Using Social Media</h3>
+    <p><strong>By Kaya Luckey</strong></p>
+    <ul>
+      <li>Sophia’s strong first draft allowed me to skip the second iteration for efficiency.</li>
+      <li>Rebuilt the stage illustration (originally a rough Image Trace) for a professional finish.</li>
+      <li>Refined typography and spacing on the title page.</li>
+    </ul>
+    </section>
+
     <div class="comparison-columns row-4">
       <div class="column">
         <h3>Sophia's Draft</h3>
@@ -423,69 +569,54 @@ section {
 
   
     for (let i = 1; i <= 4; i++) {
-      const draft = new Swiper(`.draft-swiper-${i}`, swiperSettings);
-      const critique = new Swiper(`.critique-swiper-${i}`, swiperSettings);
-      const final = new Swiper(`.final-swiper-${i}`, swiperSettings);
-  
-      const prevBtn = document.getElementById(`prev-page-${i}`);
-      const nextBtn = document.getElementById(`next-page-${i}`);
+  const draft    = new Swiper(`.draft-swiper-${i}`, swiperSettings);
+  const critique = new Swiper(`.critique-swiper-${i}`, swiperSettings);
+  const final    = new Swiper(`.final-swiper-${i}`, swiperSettings);
 
-      swiperGroups.push([draft, critique, final]);
-  
-      // Sync buttons
-     nextBtn.addEventListener('click', () => {
-        draft.slideNext();
-        critique.slideNext();
-        final.slideNext();
-      });
+  const prevBtn = document.getElementById(`prev-page-${i}`);
+  const nextBtn = document.getElementById(`next-page-${i}`);
 
-      prevBtn.addEventListener('click', () => {
-        draft.slidePrev();
-        critique.slidePrev();
-        final.slidePrev();
-      });
+  // ✅ set initial state right away (will gray out "Last")
+  updateButtonState(draft, prevBtn, nextBtn);
 
-  
-     // Fixed: sync swipers without skipping slides
-const sync = (swiper, others) => {
-  swiper.on('slideChangeTransitionEnd', () => {
-    const index = swiper.activeIndex;
-    others.forEach(s => {
-      if (s.activeIndex !== index) {
-        s.slideTo(index, 0, false);
-      }
-    });
+  // click handlers
+  nextBtn.addEventListener('click', () => {
+    draft.slideNext(); critique.slideNext(); final.slideNext();
   });
-};
+  prevBtn.addEventListener('click', () => {
+    draft.slidePrev(); critique.slidePrev(); final.slidePrev();
+  });
 
-  
-      sync(draft, [critique, final]);
-      sync(critique, [draft, final]);
-      sync(final, [draft, critique]);
+  // keep groups if you need them later
+  swiperGroups.push({ draft, critique, final, prevBtn, nextBtn });
 
-      [draft, critique, final].forEach(swiper => {
-        swiper.on('slideChange', () => {
-          updateButtonState(swiper, prevBtn, nextBtn);
-        });
-      });
-
-    }
-  
-    // Ensure all Swipers are updated on load
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        swiperGroups.forEach(([draft, critique, final]) => {
-          draft.update();
-          critique.update();
-          final.update();
-          draft.slideTo(0);
-          critique.slideTo(0);
-          final.slideTo(0);
-          updateButtonState(draft, prevBtn, nextBtn);
-
-        });
-      }, 50);
+  // sync logic...
+  const sync = (swiper, others) => {
+    swiper.on('slideChangeTransitionEnd', () => {
+      const index = swiper.activeIndex;
+      others.forEach(s => s.activeIndex !== index && s.slideTo(index, 0, false));
     });
+  };
+  sync(draft, [critique, final]);
+  sync(critique, [draft, final]);
+  sync(final, [draft, critique]);
+
+  [draft, critique, final].forEach(swiper => {
+    swiper.on('slideChange', () => updateButtonState(swiper, prevBtn, nextBtn));
+  });
+}
+
+// Optional: refresh on load, using stored refs
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    swiperGroups.forEach(({ draft, critique, final, prevBtn, nextBtn }) => {
+      draft.update(); critique.update(); final.update();
+      draft.slideTo(0); critique.slideTo(0); final.slideTo(0);
+      updateButtonState(draft, prevBtn, nextBtn); // ensure correct state
+    });
+  }, 50);
+});
+
   </script>
   
 </body>
