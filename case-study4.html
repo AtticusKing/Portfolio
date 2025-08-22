@@ -2,89 +2,285 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Under Construction</title>
+  <title>Slapstik Case Study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font for clean elegance -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
   <style>
+    /* -------- GLOBAL STYLES -------- */
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #4a86e8;
-      color: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #222;
+      line-height: 1.6;
+      width: 1000px;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    h1 { font-size: 48px; }
+    h2 { font-size: 36px; }
+    h3 { font-size: 22px; }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    section {
+      padding: 80px 64px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    img:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero {
+      background: linear-gradient(to bottom, #fca311, #f76f1f);
+      color: white;
+      text-align: left;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    .flex-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .flex-even {
+      flex: 1 1 48%;
+    }
+
+    .image-grid {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .image-grid img {
+      flex: 1 1 calc(33% - 16px);
+    }
+
+    .card-section {
       display: flex;
       flex-direction: column;
+      gap: 64px;
+    }
+
+    .card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
       align-items: center;
+    }
+
+    .card:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
       justify-content: center;
-      height: 100vh;
-      overflow: hidden;
+      margin-top: 32px;
+    }
+
+    .before-after div {
+      flex: 1 1 45%;
       text-align: center;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      animation: scaleIn 0.6s ease-out;
+    .highlight-box {
+      border-left: 6px solid #f76f1f;
+      padding-left: 24px;
+      background: #fffdf8;
     }
 
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      opacity: 0.9;
-      animation: fadeInUp 1s ease-out;
+    .centered-text {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    .gear-wrapper {
-      width: 80px;
-      height: 80px;
-      animation: spin 2.5s linear infinite;
+    .section-alt {
+      background-color: #f9f9f9;
     }
 
-    .gear-wrapper svg {
-      width: 100%;
-      height: 100%;
-      fill: #ffffff;
+    footer {
+      text-align: center;
+      font-size: 14px;
+      padding: 48px;
+      color: #888;
     }
 
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
+    /* Optional JS hooks */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
     }
 
-    @keyframes scaleIn {
-      0% {
-        transform: scale(0.85);
-        opacity: 0;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @media (max-width: 768px) {
+      h1 { font-size: 36px; }
+      h2 { font-size: 28px; }
+      section { padding: 48px 24px; }
     }
+
+    .placeholder {
+  background-color: #e0e0e0;
+  border: 2px dashed #bbb;
+  border-radius: 12px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Common sizes (adjust freely) */
+.size-1000x650  { width: 800px; height: 400px; }
+.size-400x600   { width: 400px; height: 600px; }
+.size-1280x600  { width: 100%; height: 600px; }
+.size-800x500   { width: 800px; height: 500px; }
+.size-600x400   { width: 600px; height: 400px; }
+.size-1280x720  { width: 100%; height: 720px; }
+
   </style>
 </head>
+
 <body>
-  <h1>🚧 Under Construction 🚧</h1>
-  <p>Working hard to bring you something awesome.<br>Please check back soon!</p>
-  <div class="gear-wrapper">
-    <svg viewBox="0 0 100 100">
-      <path d="M94.4 56.8c.4-2.2.6-4.4.6-6.8s-.2-4.6-.6-6.8l10.4-8.2c.9-.7 1.1-2 .4-3l-9.8-17c-.5-.9-1.6-1.4-2.6-1.1l-12.3 3.4c-3.5-2.7-7.4-4.8-11.6-6.2L66 3.3c-.2-1-1.1-1.7-2.1-1.7H36.1c-1 0-1.9.7-2.1 1.7l-2 12.8c-4.2 1.4-8.1 3.5-11.6 6.2L8.1 15.7c-1-.3-2.1.2-2.6 1.1L-4.3 33.8c-.7 1-.5 2.3.4 3l10.4 8.2c-.4 2.2-.6 4.4-.6 6.8s.2 4.6.6 6.8L-3.9 66.8c-.9.7-1.1 2-.4 3l9.8 17c.5.9 1.6 1.4 2.6 1.1l12.3-3.4c3.5 2.7 7.4 4.8 11.6 6.2l2 12.8c.2 1 1.1 1.7 2.1 1.7h27.8c1 0 1.9-.7 2.1-1.7l2-12.8c4.2-1.4 8.1-3.5 11.6-6.2l12.3 3.4c1 .3 2.1-.2 2.6-1.1l9.8-17c.7-1 .5-2.3-.4-3L94.4 56.8zM50 65c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15z"/>
-    </svg>
+  <div id="case-study">
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Slapstik Brand Refresh</h1>
+      <p>A full transformation of identity, tone, and presentation across print and digital assets.</p>
+    </section>
+
+    <!-- THE CHALLENGE -->
+    <section class="flex-row">
+      <div class="flex-even highlight-box">
+        <h2>The Challenge</h2>
+        <p>Slapstik’s identity was misaligned and scattered. The logo didn't scale, pitch decks lacked hierarchy, and the tone felt more accidental than deliberate. We needed to build a unified brand system that still felt bold and fun.</p>
+      </div>
+      <div class="flex-even">
+        <div class="placeholder size-1000x650">1000 × 650<br>Old Brand Assets</div>
+      </div>
+    </section>
+
+    <!-- INSPIRATION -->
+    <section class="section-alt">
+      <h2>Inspiration & Tone</h2>
+      <p>We drew from editorial design, absurdist humor, sticker culture, and loud, confident type systems.</p>
+      <div class="image-grid">
+        <img src="images/inspo1.jpg" alt="Inspiration 1" />
+        <img src="images/inspo2.jpg" alt="Inspiration 2" />
+        <img src="images/inspo3.jpg" alt="Inspiration 3" />
+      </div>
+    </section>
+
+    <!-- LOGO EVOLUTION -->
+    <section>
+      <h2>Logo Evolution</h2>
+      <p>The new mark preserves Slapstik’s wit and energy, but gives it a sharper, more recognizable shape and simplified palette.</p>
+      <img src="images/logo-evolution.jpg" alt="Logo progress stages" />
+    </section>
+
+    <!-- PITCH DECK -->
+    <section class="card-section section-alt">
+      <h2>Pitch Deck Transformation</h2>
+      <div class="card">
+        <img src="images/deck1.jpg" alt="New slide 1" />
+        <div class="flex-even">
+          <p>We rebuilt the deck from scratch—introducing visual anchors, spacing systems, and CTA slides that reflected the tone of the brand.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/deck2.jpg" alt="New slide 2" />
+        <div class="flex-even">
+          <p>Typographic structure and color blocking improved information clarity and attention retention across long decks.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAUNCH PRESENTATION BEFORE/AFTER -->
+    <section>
+      <h2>Launch Presentation – Before & After</h2>
+      <div class="before-after">
+        <div>
+          <h3>Before</h3>
+          <img src="images/launch-before.jpg" alt="Old slide" />
+        </div>
+        <div>
+          <h3>After</h3>
+          <img src="images/launch-after.jpg" alt="Updated slide" />
+        </div>
+      </div>
+    </section>
+
+    <!-- STYLE GUIDE -->
+    <section class="section-alt">
+      <h2>Final Style Guide</h2>
+      <p>The completed brand system was documented in a single visual guide covering tone, layout, logo usage, color, and type.</p>
+      <img src="images/style-guide.jpg" alt="Style guide spread" />
+    </section>
+
+    <!-- REFLECTION -->
+    <section class="centered-text">
+      <h2>Reflection</h2>
+      <p>This project taught me how structure empowers creativity. By giving the brand rules, we gave it more room to play.</p>
+      <p><em>“The new brand finally feels like us.” — Client</em></p>
+    </section>
+
+    <footer>© 2025 Atticus A. King · Slapstik Case Study</footer>
   </div>
+
+  <!-- OPTIONAL FADE-IN EFFECT -->
+  <script>
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>

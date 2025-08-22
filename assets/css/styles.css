@@ -448,7 +448,7 @@ body.dark-theme {
 }
 
 #home__info-description-bio {
-  text-align: center;
+  text-align: left;
   /* font-style: oblique; */
 }
 
