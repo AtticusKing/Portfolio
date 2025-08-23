@@ -1,286 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Slapstik Case Study</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Google Font for clean elegance -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-
-  <style>
-    /* -------- GLOBAL STYLES -------- */
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #fff;
-      color: #222;
-      line-height: 1.6;
-      width: 1000px;
-    }
-
-    h1, h2, h3 {
-      font-weight: 700;
-      margin-bottom: 16px;
-      line-height: 1.3;
-    }
-
-    h1 { font-size: 48px; }
-    h2 { font-size: 36px; }
-    h3 { font-size: 22px; }
-
-    p {
-      font-size: 18px;
-      margin-bottom: 16px;
-    }
-
-    section {
-      padding: 80px 64px;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    img {
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    img:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
-    }
-
-    .hero {
-      background: linear-gradient(to bottom, #fca311, #f76f1f);
-      color: white;
-      text-align: left;
-      padding-top: 100px;
-      padding-bottom: 100px;
-    }
-
-    .flex-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 48px;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .flex-even {
-      flex: 1 1 48%;
-    }
-
-    .image-grid {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    .image-grid img {
-      flex: 1 1 calc(33% - 16px);
-    }
-
-    .card-section {
-      display: flex;
-      flex-direction: column;
-      gap: 64px;
-    }
-
-    .card {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      align-items: center;
-    }
-
-    .card:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-
-    .before-after {
-      display: flex;
-      gap: 32px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 32px;
-    }
-
-    .before-after div {
-      flex: 1 1 45%;
-      text-align: center;
-    }
-
-    .highlight-box {
-      border-left: 6px solid #f76f1f;
-      padding-left: 24px;
-      background: #fffdf8;
-    }
-
-    .centered-text {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .section-alt {
-      background-color: #f9f9f9;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 14px;
-      padding: 48px;
-      color: #888;
-    }
-
-    /* Optional JS hooks */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 768px) {
-      h1 { font-size: 36px; }
-      h2 { font-size: 28px; }
-      section { padding: 48px 24px; }
-    }
-
-    .placeholder {
-  background-color: #e0e0e0;
-  border: 2px dashed #bbb;
-  border-radius: 12px;
-  color: #555;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  text-align: center;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
-}
-
-/* Common sizes (adjust freely) */
-.size-1000x650  { width: 800px; height: 400px; }
-.size-400x600   { width: 400px; height: 600px; }
-.size-1280x600  { width: 100%; height: 600px; }
-.size-800x500   { width: 800px; height: 500px; }
-.size-600x400   { width: 600px; height: 400px; }
-.size-1280x720  { width: 100%; height: 720px; }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study 3</title>
 </head>
 
+<style>
+
+    .frame {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+
+    .case-image {
+    width: 100%;
+    display: block;
+    max-width: 1024px;
+    margin: 0 auto;
+    }
+
+
+    :root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(207, 65%, 65%);
+  --title-color: hsl(207, 4%, 16%);
+  --text-color: hsl(207, 4%, 28%);
+  --text-color-light: hsl(207, 4%, 56%);
+  --body-color: hsl(207, 4%, 99%);
+  --container-color: hsl(207, 4%, 95%);
+
+  /* Change the first number */
+  /* Blue: 207 - Purple: 250 - Pink: 356 - Teal: 174 */
+  --gradient-color: linear-gradient(180deg,
+                      hsla(207, 48%, 72%, 0),
+                      hsla(207, 65%, 65%, 1));
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Roboto', sans-serif;
+  --title-font: 'Lora', serif;
+  --biggest-font-size: 1.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  --tiny-font-size: .625rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+    --tiny-font-size: .688rem;
+  }
+}
+
+
+    /*=============== HEADER & NAV ===============*/
+.header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  z-index: var(--z-fixed);
+  top: 0;
+}
+
+.nav {
+  height: calc(var(--header-height) + .5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--body-color);
+  box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
+  padding-inline: 1.5rem;
+  transition: .4s; /* for dark mode animation */
+}
+
+.nav__logo, 
+.nav__toggle, 
+.nav__close {
+  color: var(--title-color);
+}
+
+.nav__logo {
+  font-family: var(--title-font);
+  font-weight: var(--font-medium);
+
+  
+  /* font-family: var(--title-font); */
+  font-weight: var(--font-medium);
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: .5px;
+  font-weight: bold;
+  /* color: #4a86e8; */
+  color: #4a86e8;
+  font-weight: 700;
+}
+
+#move-up {
+  margin-bottom: 15px;
+}
+
+.nav__toggle {
+  display: flex;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+
+.nav__list {
+  grid-template-columns: repeat(3, max-content);
+  justify-content: center;
+  gap: 2rem 3rem;
+}
+
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: .25rem;
+  
+  color: var(--title-color);
+  transition: color .3s;
+}
+
+.nav__link:hover {
+  color: var(--title-color);
+}
+
+.nav__link i {
+  font-size: 1.25rem;
+}
+
+.nav__close {
+  position: absolute;
+  right: 1.5rem;
+  bottom: .7rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Show menu */
+.show-menu {
+  bottom: 2rem;
+}
+
+/* Active link */
+.active-link {
+  color: var(--title-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav-width {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+}
+
+.flex-one-width {
+    flex: 1;
+    align-items: flex-start;
+    padding-left: 25px;
+}
+
+.flex-two-width {
+    padding-right: 25px;
+}
+
+@media screen and (min-width: 1023px) {
+.flex-two-width {
+    width: initial;
+    margin-left: auto;
+    background-color: var(--body-color);
+    transition: background .4s;
+    text-align: right;
+  }
+
+  .nav__list {
+    display: flex;
+    column-gap: 3rem;
+  }
+  .nav__link {
+    font-size: var(--normal-font-size);
+  }
+}
+
+</style>
+
+
 <body>
-  <div id="case-study">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            
+            <div class="nav-width">
+                
+                <div class="flex-one-width" id="move-up">
+                    <a href="#" class="nav__logo">
+                      <img src="assets/img/favicon5.png" alt="favicon" style="height: 20px; vertical-align: middle; margin-right: 8px;"> 
+                        Atticus
+                    </a>
+                </div>
 
-    <!-- HERO -->
-    <section class="hero">
-      <h1>Slapstik Brand Refresh</h1>
-      <p>A full transformation of identity, tone, and presentation across print and digital assets.</p>
+                <!-- <div class="flex-two-width">
+                    <a href="/index.html" class="nav__link">
+                        <i class="ri-chat-3-line"></i> Back
+                    </a>
+                </div> -->
+            </div>
+
+            <div class="nav__buttons">
+                <!-- Theme change button -->
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-4-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="center-study">
+    <img src="/assets/img/Case Studies/Website SlapStik-01.png" alt="DES116" class="case-image">
     </section>
-
-    <!-- THE CHALLENGE -->
-    <section class="flex-row">
-      <div class="flex-even highlight-box">
-        <h2>The Challenge</h2>
-        <p>Slapstik’s identity was misaligned and scattered. The logo didn't scale, pitch decks lacked hierarchy, and the tone felt more accidental than deliberate. We needed to build a unified brand system that still felt bold and fun.</p>
-      </div>
-      <div class="flex-even">
-        <div class="placeholder size-1000x650">1000 × 650<br>Old Brand Assets</div>
-      </div>
-    </section>
-
-    <!-- INSPIRATION -->
-    <section class="section-alt">
-      <h2>Inspiration & Tone</h2>
-      <p>We drew from editorial design, absurdist humor, sticker culture, and loud, confident type systems.</p>
-      <div class="image-grid">
-        <img src="images/inspo1.jpg" alt="Inspiration 1" />
-        <img src="images/inspo2.jpg" alt="Inspiration 2" />
-        <img src="images/inspo3.jpg" alt="Inspiration 3" />
-      </div>
-    </section>
-
-    <!-- LOGO EVOLUTION -->
-    <section>
-      <h2>Logo Evolution</h2>
-      <p>The new mark preserves Slapstik’s wit and energy, but gives it a sharper, more recognizable shape and simplified palette.</p>
-      <img src="images/logo-evolution.jpg" alt="Logo progress stages" />
-    </section>
-
-    <!-- PITCH DECK -->
-    <section class="card-section section-alt">
-      <h2>Pitch Deck Transformation</h2>
-      <div class="card">
-        <img src="images/deck1.jpg" alt="New slide 1" />
-        <div class="flex-even">
-          <p>We rebuilt the deck from scratch—introducing visual anchors, spacing systems, and CTA slides that reflected the tone of the brand.</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="images/deck2.jpg" alt="New slide 2" />
-        <div class="flex-even">
-          <p>Typographic structure and color blocking improved information clarity and attention retention across long decks.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- LAUNCH PRESENTATION BEFORE/AFTER -->
-    <section>
-      <h2>Launch Presentation – Before & After</h2>
-      <div class="before-after">
-        <div>
-          <h3>Before</h3>
-          <img src="images/launch-before.jpg" alt="Old slide" />
-        </div>
-        <div>
-          <h3>After</h3>
-          <img src="images/launch-after.jpg" alt="Updated slide" />
-        </div>
-      </div>
-    </section>
-
-    <!-- STYLE GUIDE -->
-    <section class="section-alt">
-      <h2>Final Style Guide</h2>
-      <p>The completed brand system was documented in a single visual guide covering tone, layout, logo usage, color, and type.</p>
-      <img src="images/style-guide.jpg" alt="Style guide spread" />
-    </section>
-
-    <!-- REFLECTION -->
-    <section class="centered-text">
-      <h2>Reflection</h2>
-      <p>This project taught me how structure empowers creativity. By giving the brand rules, we gave it more room to play.</p>
-      <p><em>“The new brand finally feels like us.” — Client</em></p>
-    </section>
-
-    <footer>© 2025 Atticus A. King · Slapstik Case Study</footer>
-  </div>
-
-  <!-- OPTIONAL FADE-IN EFFECT -->
-  <script>
-    // Fade-in on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  </script>
+    
 </body>
 </html>
