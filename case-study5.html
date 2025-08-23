@@ -25,7 +25,7 @@
     padding: 0;
     }
 
-    header {
+    .oldheader {
       text-align: center;
       margin-bottom: 2rem;
     }
@@ -288,15 +288,222 @@ section {
   max-width: 700px;         /* shorter than full width */
 }
 
+  /*=============== HEADER & NAV ===============*/
+.header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  z-index: var(--z-fixed);
+  top: 0;
+}
+
+.nav {
+  height: calc(var(--header-height) + .5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--body-color);
+  box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
+  padding-inline: 1.5rem;
+  transition: .4s; /* for dark mode animation */
+}
+
+.nav__logo, 
+.nav__toggle, 
+.nav__close {
+  color: var(--title-color);
+}
+
+.nav__logo {
+  /* font-family: var(--title-font);
+  font-weight: var(--font-medium); */
+
+  /* font-family: var(--title-font); */
+  font-weight: var(--font-medium);
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: .5px;
+  font-weight: bold;
+  /* color: #4a86e8; */
+  color: #4a86e8;
+  font-weight: 700;
+}
+
+#move-up {
+  margin-bottom: 15px;
+}
+
+.nav__toggle {
+  display: flex;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+
+.nav__list {
+  grid-template-columns: repeat(3, max-content);
+  justify-content: center;
+  gap: 2rem 3rem;
+}
+
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: .25rem;
+  
+  color: var(--title-color);
+  transition: color .3s;
+}
+
+.nav__link:hover {
+  color: var(--title-color);
+}
+
+.nav__link i {
+  font-size: 1.25rem;
+}
+
+.nav__close {
+  position: absolute;
+  right: 1.5rem;
+  bottom: .7rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Show menu */
+.show-menu {
+  bottom: 2rem;
+}
+
+/* Active link */
+.active-link {
+  color: var(--title-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav-width {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+}
+
+.flex-one-width {
+    flex: 1;
+    align-items: flex-start;
+    padding-left: 25px;
+}
+
+.flex-two-width {
+    padding-right: 25px;
+}
+
+@media screen and (min-width: 1023px) {
+.flex-two-width {
+    width: initial;
+    margin-left: auto;
+    background-color: var(--body-color);
+    transition: background .4s;
+    text-align: right;
+  }
+
+  .nav__list {
+    display: flex;
+    column-gap: 3rem;
+  }
+  .nav__link {
+    font-size: var(--normal-font-size);
+  }
+}
+
+/* 1) Define the variables this header relies on */
+:root {
+  --header-height: 3.5rem;
+  --first-color: hsl(207, 65%, 65%);
+  --title-color: hsl(207, 4%, 16%);
+  --text-color: hsl(207, 4%, 28%);
+  --text-color-light: hsl(207, 4%, 56%);
+  --body-color: hsl(207, 4%, 99%);
+  --container-color: hsl(207, 4%, 95%);
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* 2) Provide the .container utility used in <nav class="nav container"> */
+.container {
+  max-width: 1024px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+/* 3) Give the page content breathing room below the fixed header */
+body {
+  padding-top: calc(var(--header-height) + 0.5rem);
+}
+
+/* 4) Optional: unify page background so header color matches body */
+html, body {
+  background: var(--body-color);
+}
+
+/* 5) (Optional) Make the brand text look like the “nice” header */
+.nav__logo {
+  letter-spacing: .5px;
+  font-weight: 700;
+  color: #4a86e8;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 
   </style>
 </head>
 <body>
 
-  <header>
+  <header class="header" id="header">
+        <nav class="nav container">
+            
+            <div class="nav-width">
+                
+                <div class="flex-one-width"  id="move-up">
+                    <a href="#" class="nav__logo">
+                      <img src="assets/img/favicon6.png" alt="favicon" style="height: 20px; vertical-align: middle; margin-right: 8px;"> 
+                        Atticus
+                    </a>
+                </div>
+
+                <!-- <div class="flex-two-width">
+                    <a href="/index.html" class="nav__link">
+                        <i class="ri-chat-3-line"></i> Back
+                    </a>
+                </div> -->
+            </div>
+
+            <div class="nav__buttons">
+                <!-- Theme change button -->
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-4-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+  <div class="oldheader">
     <h1>Magazine Iteration Comparison</h1>
     <p>Click through to compare each article side by side.</p>
-  </header>
+  </div>
   
   <section class="callout-wrap">
     <div class="paragraph-thin">
